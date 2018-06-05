@@ -3424,10 +3424,12 @@ dynamic_global_property_object wallet_api::get_dynamic_global_properties() const
    return my->get_dynamic_global_properties();
 }
 
+// The basic help function for the wallet.
 string wallet_api::help()const
 {
    std::vector<std::string> method_names = my->method_documentation.get_method_names();
    std::stringstream ss;
+//    ss<<"TEST STRING";
    for (const std::string method_name : method_names)
    {
       try
