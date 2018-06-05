@@ -30,6 +30,7 @@
 #include <graphene/chain/protocol/custom.hpp>
 #include <graphene/chain/protocol/committee_member.hpp>
 #include <graphene/chain/protocol/confidential.hpp>
+#include <graphene/chain/protocol/escrow.hpp>   //---> escrow.hpp added for introducing an escrow in the system.
 #include <graphene/chain/protocol/fba.hpp>
 #include <graphene/chain/protocol/market.hpp>
 #include <graphene/chain/protocol/proposal.hpp>
@@ -91,7 +92,12 @@ namespace graphene { namespace chain {
             transfer_from_blind_operation,
             asset_settle_cancel_operation,  // VIRTUAL
             asset_claim_fees_operation,
-            fba_distribute_operation        // VIRTUAL
+            fba_distribute_operation,        // VIRTUAL
+            //--BEGIN operations pertaining to escrow implementation
+            escrow_transfer_operation,
+            escrow_dispute_operation,
+            escrow_release_operation
+            //--END operations pertaining to escrow implementation
          > operation;
 
    /// @} // operations group
